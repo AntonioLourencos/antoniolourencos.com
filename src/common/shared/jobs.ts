@@ -47,7 +47,7 @@ const Jobs: IJob[] = [
   {
     companyName: "Tibuff",
     description:
-      "During my time, I developed CRMs, E-commerce applications, and also helped the backEnd team whenever possible. I was responsible for deploying internal testing services and developing a backEnd project for a clinic. I worked closely with the team to understand requirements, design efficient solutions, and ensure smooth deployment of the applications. My contributions streamlined internal processes, improved efficiency, and delivered high-quality solutions to meet team and stakeholder needs.",
+    "As a chat bot developer, I utilized my expertise in Python, Google API, and Flask to develop chat bots specifically for the WhatsApp and Telegram platforms. My responsibilities included designing conversation flows, implementing backend logic, integrating with external APIs, and conducting testing. Leveraging my strong technical skills in Python, Google API, and Flask, I was able to create robust and scalable chat bots that provided seamless and personalized interactions for users. Collaborating closely with stakeholders and understanding user requirements, I successfully improved user engagement and customer satisfaction through my chat bot solutions.",
     location: "Brazil",
     locationMethod: "Remote",
     role: "Back End Developer",
