@@ -3,20 +3,21 @@
 import Jobs from "../../common/shared/jobs";
 
 function ExperiencesAndProjects() {
-  function formatDate(date?: string) {
+  function formatDate(date: string | null) {
     if (!date) return "Present";
 
     return Intl.DateTimeFormat("en-GB", {
       month: "short",
       year: "numeric",
+      timeZone: "UTC",
     }).format(new Date(date));
   }
 
-  function countTimeOfWork(started: string, ended?: string): string {
+  function countTimeOfWork(started: string, ended: string | null): string {
     const startedInDate = new Date(started);
     const endedInDate = ended ? new Date(ended) : new Date();
-    const diffInMilliseconds = endedInDate.getTime() - startedInDate.getTime();
 
+    const diffInMilliseconds = endedInDate.getTime() - startedInDate.getTime();
     const diffInDays = Math.floor(diffInMilliseconds / (1000 * 3600 * 24));
 
     const years = Math.floor(diffInDays / 365);
@@ -48,12 +49,12 @@ function ExperiencesAndProjects() {
 
       <div>
         {Jobs.map((job) => {
-          job.time = countTimeOfWork(job.startedAt, job.endedAt || undefined);
-          job.startedAt = formatDate(job.startedAt);
-          job.endedAt = formatDate(job.endedAt);
+          let time = countTimeOfWork(job.startedAt, job.endedAt ?? null);
+          let startedAt = formatDate(job.startedAt);
+          let endedAt = formatDate(job.endedAt ?? null);
 
           return (
-            <div key={job.startedAt}>
+            <div key={`${job.companyName}-${job.startedAt}`}>
               <div className="flex flex-row items-center gap-4">
                 <div className="bg-white h-5 w-5 rounded-full" />
                 <span className="text-2xl">{job.companyName}</span>
@@ -65,9 +66,11 @@ function ExperiencesAndProjects() {
                     {job.location} - {job.locationMethod}
                   </p>
                   <p>
-                    {job.startedAt} - {job.endedAt ?? "Present"} ({job.time})
+                    {startedAt} - {endedAt} ({time})
                   </p>
-                  <p>{job.role} - {job.contractType}</p>
+                  <p>
+                    {job.role} - {job.contractType}
+                  </p>
                 </section>
 
                 <section>
