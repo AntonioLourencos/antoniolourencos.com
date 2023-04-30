@@ -1,5 +1,5 @@
 // Utils
-import Skills from "../../common/shared/skills";
+import Skills from "../../../common/shared/skills";
 
 function CurrentStack() {
   return (

@@ -1,9 +1,9 @@
 "use client";
 
 // Components
-import Welcome from "../components/welcome";
-import CurrentStack from "../components/currentStack";
-import ExperiencesAndProjects from "../components/experiencesAndProjects";
+import Welcome from "../components/home/welcome";
+import CurrentStack from "../components/home/currentStack";
+import ExperiencesAndProjects from "../components/home/experiencesAndProjects";
 
 export default function Home() {
   return (

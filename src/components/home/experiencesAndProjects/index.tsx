@@ -1,6 +1,6 @@
 "use client";
 
-import Jobs from "../../common/shared/jobs";
+import Jobs from "../../../common/shared/jobs";
 
 function ExperiencesAndProjects() {
   function formatDate(date: string | null) {

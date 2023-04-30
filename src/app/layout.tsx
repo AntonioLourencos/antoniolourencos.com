@@ -6,8 +6,8 @@ import getMetadata from "../common/shared/metadata";
 
 
 // Components
-import Header from "../components/header";
-import Footer from "../components/footer";
+import Header from "../components/shared/header";
+import Footer from "../components/shared/footer";
 
 const QuisandFont = Quicksand({ preload: true, weight: ["400", "500", "700"], subsets: ["latin-ext"] });
 
